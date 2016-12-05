@@ -1,8 +1,14 @@
-ul {
+*{
+  background-color: gray;
+}
+
+ul{
   float: left;
+  margin: 50px;
   font-size: x-large;
 }
 
-li {
+li{
   font-size: large;
+  list-style: circle;
 }
