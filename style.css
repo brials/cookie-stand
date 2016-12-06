@@ -12,3 +12,18 @@ li{
   font-size: large;
   list-style: circle;
 }
+
+td, th{
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+}
+
+
+table{
+  border: 2px solid black;
+}
+
+td:first-child{
+  font-weight: bold;
+}
