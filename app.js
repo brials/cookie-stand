@@ -7,7 +7,7 @@ var minData = [23, 3, 11, 20, 2];
 var maxData = [65, 24, 38, 38, 16];
 var avgData = [6.3, 1.2, 3.7, 2.3, 4.6]; // for all these arrays positions match their data across.
 var rowData = [2, 3, 4, 5, 6]
-var forms = document.getElementById('shops');
+var shopsForm = document.getElementById('shops');
 var table = document.getElementById('storeTable');
 
 
@@ -91,5 +91,29 @@ function renderAllShops(){
   }
   tableCreateFooter();
 }
+
+function handleShopsSubmit(event){
+  event.preventDefault();
+  if(!event.target.store.value || !event.target.newMin.value || !event.target.newMax.value || !event.target.newAvg.value){
+    return alert('Please input a value into each form');
+  }
+  shopObjects = [];
+  var name = event.target.store.value;
+  var min = parseInt(event.target.newMin.value);
+  var max = parseInt(event.target.newMax.value);
+  var avg = parseInt(event.target.newAvg.value);
+  locationData.push(name);
+  minData.push(min);
+  maxData.push(max);
+  avgData.push(avg);
+  rowData[rowData.length] = rowData[(rowData.length - 1)] + 1;
+  event.target.store.value = null;
+  event.target.newMin.value = null;
+  event.target.newMax.value = null;
+  event.target.newAvg.value = null;
+  renderAllShops();
+}
+
+shopsForm.addEventListener('submit', handleShopsSubmit);
 
 renderAllShops();
