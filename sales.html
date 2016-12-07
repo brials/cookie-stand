@@ -6,6 +6,20 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
+    <form id="shops">
+      <fieldset>
+        <legend> Submit Data to Create a New Store. </legend>
+        <label for="store"> Store Location </label>
+        <input name="store" type="text" placeholder="Store Name">
+        <label for="newMin"> Minimum Customers </label>
+        <input name="newMin" type="text" placeholder="Min">
+        <label for="newMax"> Maximum Customers</label>
+        <input name="newMax" type="text" placeholder="Max">
+        <label for="newAvg"> Average Cookies Bought </label>
+        <input name="newAvg" type="text" placeholder="Average">
+        <button type="submit"> Submit Data </button>
+      </fieldset>
+    </form>
     <h1>See below for sales projections for a random day.</h1>
     <table id="storeTable"></table>
     <script src="app.js"></script>

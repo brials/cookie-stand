@@ -27,3 +27,7 @@ table{
 td:first-child{
   font-weight: bold;
 }
+
+fieldset {
+  border-radius: 20px;
+}

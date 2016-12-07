@@ -6,7 +6,10 @@ var locationData = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol
 var minData = [23, 3, 11, 20, 2];
 var maxData = [65, 24, 38, 38, 16];
 var avgData = [6.3, 1.2, 3.7, 2.3, 4.6]; // for all these arrays positions match their data across.
-var rowData = ['row2', 'row3', 'row4', 'row5', 'row6']
+var rowData = [2, 3, 4, 5, 6]
+var shopsForm = document.getElementById('shops');
+var table = document.getElementById('storeTable');
+
 
 function Store(shop, min, max, avg, rowId) {
   this.shopName = shop;
@@ -41,7 +44,7 @@ function Store(shop, min, max, avg, rowId) {
   }
 }
 
-function rend(el, text, newId, placeId){
+function rend(el, text, newId, placeId){ // Render function
   var tempEl = document.createElement(el);
   if(newId !== 0){
     tempEl.setAttribute('id', newId)
@@ -57,14 +60,6 @@ function tableCreateHeader(){ // Header function
     rend('th', hours[i], 0, 'storeTable');
   }
   rend('th', 'Total', 0, 'storeTable');
-}
-
-function arrayShops(){  // Stores all objects in an array and runs the makeRow function for each of them.
-  for(var i = 0; i < locationData.length; i++){
-    var temp = new Store(locationData[i], minData[i], maxData[i], avgData[i], rowData[i]);
-    shopObjects.push(temp);
-    temp.makeRow();
-  }
 }
 
 function tableCreateFooter(){  //Makes the footer that adds up the total for each object at each hour, and totals the toal counts.
@@ -84,6 +79,41 @@ function tableCreateFooter(){  //Makes the footer that adds up the total for eac
   rend('td', overallTotal, 0, 'footer')
 }
 
-tableCreateHeader();
-arrayShops();
-tableCreateFooter();
+function renderAllShops(){
+  table.innerHTML = '';
+  tableCreateHeader();
+  for(var i = 0; i < locationData.length; i++){
+    var temp = new Store(locationData[i], minData[i], maxData[i], avgData[i], rowData[i]);
+    shopObjects.push(temp);
+  }
+  for(var j = 0; j <shopObjects.length; j++){
+    shopObjects[j].makeRow();
+  }
+  tableCreateFooter();
+}
+
+function handleShopsSubmit(event){
+  event.preventDefault();
+  if(!event.target.store.value || !event.target.newMin.value || !event.target.newMax.value || !event.target.newAvg.value){
+    return alert('Please input a value into each form');
+  }
+  shopObjects = [];
+  var name = event.target.store.value;
+  var min = parseInt(event.target.newMin.value);
+  var max = parseInt(event.target.newMax.value);
+  var avg = parseInt(event.target.newAvg.value);
+  locationData.push(name);
+  minData.push(min);
+  maxData.push(max);
+  avgData.push(avg);
+  rowData[rowData.length] = rowData[(rowData.length - 1)] + 1;
+  event.target.store.value = null;
+  event.target.newMin.value = null;
+  event.target.newMax.value = null;
+  event.target.newAvg.value = null;
+  renderAllShops();
+}
+
+shopsForm.addEventListener('submit', handleShopsSubmit);
+
+renderAllShops();
