@@ -1,7 +1,11 @@
-*{
-  background-color: gray;
+body{
+  background-image:url(./Pictures/fish.jpg);
 }
 
+h1{
+  background-color: white;
+  display:inline;
+}
 ul{
   float: left;
   margin: 50px;
@@ -22,12 +26,15 @@ td, th{
 
 table{
   border: 2px solid black;
+  min-width: 80%;
+  min-height: 400px;
 }
 
 td:first-child{
   font-weight: bold;
 }
 
-fieldset {
+fieldset, form, legend {
+  background-color: white;
   border-radius: 20px;
 }

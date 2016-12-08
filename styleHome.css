@@ -1,0 +1,79 @@
+/* Color pallete = #d3a493; #364331; #d8a968; #987645; #a74826 */
+*{
+background-color: #d3a493;
+}
+h1{
+  color: #228B22;
+  display:block;
+}
+a {
+  color: #364331;
+}
+
+header{
+  text-align: center;
+}
+.head{
+  text-align: center;
+  line-height: 100px;
+  background-color: #228B22;
+}
+#headerh1{
+  background-color: #228B22;
+  clear: both;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+ul {
+  float:center;
+  list-style: none;
+  margin: auto;
+  width:400px;
+}
+
+li{
+  float:left;
+  margin: 0px 20px;
+}
+#salmon{
+  max-width: 320px;
+  max-height: 100px;
+  background-color: white;
+}
+.third{
+  clear: left;
+}
+article{
+  display:block;
+  max-width: 30%;
+  float:left;
+  margin: 1%;
+  margin-bottom: 100px;
+}
+div{
+  clear: both;
+}
+.space{
+  clear: both;
+  display:block;
+  width: 100%;
+  height: 100px;
+}
+#derpFam{
+  max-width: 300px;
+  max-height: 150px;
+}
+#shirt{
+  width: 200px;
+  height: 200px;
+}
+#cutter{
+  width: 200px;
+  height: 200px;
+}
+#chinook{
+  width: 300px;
+  height: 100px;
+}
