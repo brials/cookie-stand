@@ -1,0 +1,24 @@
+/* Color pallete = #d3a493; #364331; #d8a968; #987645; #a74826 */
+*{
+  background-color: #d3a493;
+}
+
+a {
+  color: #364331;
+}
+
+header{
+  text-align: center;
+}
+
+ul {
+  float:center;
+  list-style: none;
+  margin: auto;
+  width:400px;
+}
+
+li{
+  float:left;
+  margin: 0px 20px;
+}

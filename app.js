@@ -27,7 +27,7 @@ function Store(shop, min, max, avg, rowId) {
 
   this.avgSoldPH = function(){ //adds the random data to the array
     for(var i = 0; i < hours.length; i++){
-      var temp = Math.floor(this.randCustPH() * this.avgCookieSalePD);
+      var temp = Math.ceil(this.randCustPH() * this.avgCookieSalePD);
       this.cookiesSoldHourlyData.push(temp);
       this.totalCookiesSold += temp;
     }
@@ -97,11 +97,17 @@ function handleShopsSubmit(event){
   if(!event.target.store.value || !event.target.newMin.value || !event.target.newMax.value || !event.target.newAvg.value){
     return alert('Please input a value into each form');
   }
+  if(isNaN(parseInt(event.target.newMin.value)) || isNaN(parseInt(event.target.newMax.value)) || isNaN(parseFloat(event.target.newAvg.value))){
+    return alert('Please input a number into minimum, maximum, and average');
+  }
+  if(parseInt(event.target.newMin.value) > parseInt(event.target.newMax.value)){
+    return alert('Please make Maximum a larger number than Minimum');
+  }
   shopObjects = [];
   var name = event.target.store.value;
   var min = parseInt(event.target.newMin.value);
   var max = parseInt(event.target.newMax.value);
-  var avg = parseInt(event.target.newAvg.value);
+  var avg = parseFloat(event.target.newAvg.value);
   locationData.push(name);
   minData.push(min);
   maxData.push(max);
