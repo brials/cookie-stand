@@ -4,7 +4,7 @@ background-color: #d3a493;
 }
 h1{
   color: #228B22;
-  display:block; 
+  display:block;
 }
 a {
   color: #364331;
@@ -12,6 +12,18 @@ a {
 
 header{
   text-align: center;
+}
+.head{
+  text-align: center;
+  line-height: 100px;
+  background-color: #228B22;
+}
+#headerh1{
+  background-color: #228B22;
+  clear: both;
+  margin: auto;
+  text-align: center;
+  color: white;
 }
 
 ul {
@@ -28,6 +40,7 @@ li{
 #salmon{
   max-width: 320px;
   max-height: 100px;
+  background-color: white;
 }
 .third{
   clear: left;
@@ -39,10 +52,14 @@ article{
   margin: 1%;
   margin-bottom: 100px;
 }
+div{
+  clear: both;
+}
 .space{
+  clear: both;
   display:block;
   width: 100%;
-  height: 200px;
+  height: 100px;
 }
 #derpFam{
   max-width: 300px;
